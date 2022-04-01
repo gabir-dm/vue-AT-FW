@@ -1,27 +1,25 @@
 <template>
-    <div>
+    <div class="d-flex flex-column h-100">
         <NavBar />
-        <div class="row mt-5">
-            <h1>Listagem de Livros</h1>
-        </div>
-        <FooterBar />
+        <main class="flex-shrink-0">
+            <div class="row mt-5">
+                <h1>Jogos Disponíveis</h1>
+
+            </div>
+        </main>
     </div>
 </template>
 
 <script>
 import NavBar from '../components/NavBar.vue'
-import FooterBar from '../components/Footer.vue'
 
     export default {
         name: 'HomePage',
         components: {
-            NavBar, FooterBar
+            NavBar
         }
     }
 </script>
 
 <style>
-    h1 {
-        margin: 20px;
-    }
 </style>

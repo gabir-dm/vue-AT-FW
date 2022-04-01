@@ -8,7 +8,7 @@
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
         <a class="nav-link" @click="$router.push('/')" href="">Home</a> 
-        <a class="nav-link" href="#">Adicionar</a>
+        <a class="nav-link" @click="$router.push('/adicionar')" href="#">Adicionar</a>
       </div>
     </div>
   </div>

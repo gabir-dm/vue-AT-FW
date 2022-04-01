@@ -1,42 +1,43 @@
 <template>
     <NavBar/>
-    <h1>Adicionar Jogo</h1>
-        <form @submit.prevent="addJogo" class="container">
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column m-3">
-                    <label>Nome</label>
-                    <input name="nome-jogo" type="text" v-model="jogo.nome"> 
+    <div class="mt-5">
+        <h1>Adicionar Jogo</h1>
+            <form @submit.prevent="addJogo" class="container">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="d-flex flex-fill m-3 form-floating">
+                        <input name="nome-jogo" class="form-control" type="text" placeholder="Nome do Jogo" v-model="jogo.nome"> 
+                        <label for="nome-jogo">Nome</label>
+                    </div>
+                    <div class="d-flex flex-fill m-3 form-floating">
+                        <select name="gen-jogo" class="form-select" v-model="jogo.genero">
+                            <option disabled>Selecione o gênero</option>
+                            <option>Ação</option>
+                            <option>Aventura</option>
+                            <option>RPG</option>
+                            <option>Corrida</option>
+                            <option>Indie</option>
+                            <option>Simulação</option>
+                            <option>Esporte</option>
+                        </select>
+                        <label for="gen-jogo">Gênero</label>
+                    </div>
+                    <div class="d-flex flex-fill m-3 form-floating">
+                        <input class="form-control" name="dev-jogo" type="text" placeholder="Desenvolvedor" v-model="jogo.desenvolvedor"> 
+                        <label for="dev-jogo">Desenvolvedor</label>
+                    </div>
+                    <div class="d-flex flex-fill m-3 form-floating">
+                        <input class="form-control" name="plat-jogo" type="text" placeholder="Plataforma" v-model="jogo.plataforma"> 
+                        <label for="plat-jogo">Plataforma</label>
+                    </div>
                 </div>
-                <div class="d-flex flex-column m-3">
-                <label>Gênero</label>
-                    <select v-model="jogo.genero">
-                        <option>Ação</option>
-                        <option>Aventura</option>
-                        <option>RPG</option>
-                        <option>Corrida</option>
-                        <option>Indie</option>
-                        <option>Simulação</option>
-                        <option>Esporte</option>
-                    </select>
+                <div class="d-flex m-3 form-floating">
+                    <textarea name="descr-jogo" class="form-control" style="height: 150px" placeholder="Digite uma breve descrição." v-model="jogo.descricao"></textarea>
+                    <label for="desc-jogo">Descrição</label>
                 </div>
-            </div>
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column m-3">
-                    <label>Desenvolvedor</label>
-                    <input name="dev-jogo" type="text" v-model="jogo.desenvolvedor"> 
-                </div>
-                <div class="d-flex flex-column m-3">
-                    <label>Plataforma</label>
-                    <input name="plat-jogo" type="text" v-model="jogo.plataforma"> 
-                </div>
-            </div>
-            <div class="d-flex flex-column mb-3">
-                <label>Descrição</label>
-                <textarea name="descr-jogo" rows="4" cols="50" placeholder="Digite uma breve descrição." v-model="jogo.descricao"></textarea>
-            </div>
-            <button type="submit" class="btn btn-info me-3">Adicionar</button>
-            <button class="btn btn-dark" @click="$router.push('/')">Voltar</button>
-        </form>
+                <button type="submit" class="btn btn-info m-3">Adicionar</button>
+                <button class="btn btn-dark" @click="$router.push('/')">Voltar</button>
+            </form>
+    </div>
     <FooterBar/>
 </template>
 
